@@ -9,10 +9,15 @@
 			Bmob.initialize("56298e29cf4a7b3c", "228068");
 			Bmob.debug(true);
 			function register(){
-				 Bmob.User.login(document.getElementById('username').value,
-				 document.getElementById('powassd').value).then(res => {
+				var usernames=document.getElementById('username').value;
+				var powassds=document.getElementById('powassd').value;
+				let params = {
+				    username: usernames,
+				    password: powassds,
+				}
+				Bmob.User.register(params).then(res => {
 				   location.href="login.html";
-				 }).catch(err => {
+				}).catch(err => {
 				  alert(err.error);
 				});
 			}
@@ -29,7 +34,7 @@
 				<p>密码：</p>
 				<input type="text" id="powassd" placeholder="密码"/>
 				<br/>
-				<button onclick="register">注册</button>
+				<button onclick="register()">注册</button>
 			</div>
 		</div>
 	</body>

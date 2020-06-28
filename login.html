@@ -2,8 +2,36 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+		<title>金斗云登录</title>
+			<link rel="stylesheet" type="text/css" href="css/index.css"/>
+			<script src="js/Bmob-2.2.5.min.js"></script>
+			<script>
+				Bmob.initialize("56298e29cf4a7b3c", "228068");
+				Bmob.debug(true);
+				function login(){
+					var usernames=document.getElementById('username').value;
+					var powassds=document.getElementById('powassd').value;
+					 Bmob.User.login(usernames,powassds).then(res => {
+					   location.href="动画.html";
+					 }).catch(err => {
+					  alert(err.error);
+					});
+				}
+			</script>
+		</head>
+		
+		<body>
+			<div class="boxs">
+				
+				<div class="formm">
+					<h1>登录</h1>
+					<p>用户名：</p>
+					<input type="text" id="username" placeholder="用户名"/>
+					<p>密码：</p>
+					<input type="text" id="powassd" placeholder="密码"/>
+					<br/>
+					<button onclick="login()">登录</button>
+				</div>
+			</div>
+		</body>
 </html>
