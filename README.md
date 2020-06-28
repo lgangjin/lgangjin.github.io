@@ -1,2 +1,2 @@
 # lgangjin.github.io
-my first reposistort
+my first demo
